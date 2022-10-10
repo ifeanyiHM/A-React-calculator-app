@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.8);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    background: #fed656;
+    padding: 9px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px 0 #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.input{
+    background: #fff;
+    border-radius: 10px;
+    text-align: end;
+    height: 120px;
+    padding: 20px 10px 0 10px;
+    width: 240px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2) inset;
+    line-height: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.two{
+    font-size: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px 0;
+}
+
+button{
+    padding: 20px;
+    margin: 5px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: #fed656;
+    box-shadow: 2px 2px 5px 0 rgb(0, 0, 0, 0.5), 1px 1px 1px rgb(255, 255, 255, 0.3) inset;
+}
+
+.equal{
+    grid-row: 4/6;
+    grid-column: 4/5;
+}
+
+.mage{
+    width: 10px;
 }

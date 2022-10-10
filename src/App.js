@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React from "react";
+import Control from "./component/Control";
 import './App.css';
+import Header from "./component/Header";
+import Input from "./component/Input";
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    const [result, setResult] = useState('');
+    const [total, setTotal] = useState('');
+
+    const handleClick = (e) => {
+        setResult(result.concat(e.target.name));
+    }
+
+    const blank = () => {
+        setResult("");
+        setTotal("");
+    }
+
+    const clean = () => {
+        setResult(result.slice(0, -1));
+    }
+
+    const final = () => {
+        const finalAnswer = eval(result);
+        setTotal(finalAnswer);
+        //or... setTotal(eval(result));
+    }
+
+    return (
+        <>
+            <div className="container">
+                <Header />
+                <Input results={result} total={total} />
+                <Control handleClick={handleClick} blank={blank} clean={clean} final={final}/>
+                
+            </div>
+        </>
+    );
 }
-
+ 
 export default App;
